@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trip.com Replica · Flights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            trip: {
+              blue: '#0063ff',
+              dark: '#102452',
+              slate: '#5f6b7c',
+              border: '#dde3ef'
+            }
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+            poppins: ['Poppins', 'sans-serif']
+          },
+          maxWidth: {
+            container: '1280px'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-[#f5f7fb] text-[#1d2433] font-inter">
+  <div class="min-h-screen">
+    <header class="bg-white shadow-sm border-b border-trip-border">
+      <div class="max-w-container mx-auto px-6">
+        <div class="flex items-center justify-between h-16 gap-4">
+          <div class="flex items-center gap-3">
+            <a href="index.html" class="flex items-center gap-2 text-trip-blue font-semibold text-xl">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Trip.com_logo.svg" alt="Trip.com" class="h-6">
+              <span>Trip.com</span>
+            </a>
+            <div class="hidden lg:flex items-center text-sm text-trip-slate divide-x divide-trip-border">
+              <a class="px-3" href="hotels.html">Hotels</a>
+              <a class="px-3 font-semibold text-trip-blue" aria-current="page" href="flights.html">Flights</a>
+              <a class="px-3" href="trains.html">Trains</a>
+              <a class="px-3" href="cars.html">Cars</a>
+              <a class="px-3" href="tours.html">Tours</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 text-sm">
+            <a class="px-4 py-2 rounded-full bg-trip-blue text-white font-medium" href="#">Sign in / Register</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-container mx-auto px-6 py-10 space-y-12">
+      <section class="bg-white rounded-3xl p-8 shadow-xl border border-trip-border">
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+          <div class="space-y-5">
+            <span class="px-4 py-1 rounded-full bg-blue-50 text-trip-blue text-sm font-semibold">Flights</span>
+            <h1 class="text-4xl font-poppins font-semibold">Search and save on global flights</h1>
+            <p class="text-trip-slate text-lg">Compare fares from 500+ airlines, use flexible filters, and unlock Trip Coins on every trip.</p>
+            <div class="grid gap-4" data-inject="flight-search">
+              <div class="grid md:grid-cols-2 gap-4">
+                <input class="search-input" placeholder="From" />
+                <input class="search-input" placeholder="To" />
+              </div>
+              <div class="grid md:grid-cols-3 gap-4">
+                <input class="search-input" type="date" />
+                <input class="search-input" type="date" />
+                <input class="search-input" value="1 adult · Economy" />
+              </div>
+              <button class="search-button">Search flights</button>
+            </div>
+          </div>
+          <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80" alt="Flights" class="rounded-2xl shadow-2xl">
+        </div>
+      </section>
+
+      <section class="space-y-6">
+        <div class="flex items-center justify-between">
+          <h2 class="section-title">Top deals for this week</h2>
+          <a class="text-trip-blue font-semibold" href="#">View calendar</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6" data-inject="flight-deals">
+          <article class="transport-card">
+            <div class="text-xs text-trip-slate">New York ➜ Paris</div>
+            <h3>Dec 12 · Non-stop</h3>
+            <p>From $389</p>
+          </article>
+          <article class="transport-card">
+            <div class="text-xs text-trip-slate">Los Angeles ➜ Tokyo</div>
+            <h3>Dec 18 · 1 stop</h3>
+            <p>From $612</p>
+          </article>
+          <article class="transport-card">
+            <div class="text-xs text-trip-slate">Singapore ➜ Sydney</div>
+            <h3>Dec 25 · Non-stop</h3>
+            <p>From $455</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="space-y-6">
+        <h2 class="section-title">Why book flights on Trip.com?</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <article class="destination-card">
+            <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=900&q=80" alt="Support">
+            <div>
+              <h3>24/7 global support</h3>
+              <p>Chat, email, and phone support in 24 languages.</p>
+            </div>
+          </article>
+          <article class="destination-card">
+            <img src="https://images.unsplash.com/photo-1453743327117-664e2bf4e951?auto=format&fit=crop&w=900&q=80" alt="Coins">
+            <div>
+              <h3>Earn Trip Coins</h3>
+              <p>Earn status faster and redeem on hotels, trains, and more.</p>
+            </div>
+          </article>
+          <article class="destination-card">
+            <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=900&q=80" alt="Protection">
+              <div>
+                <h3>Free cancellation options</h3>
+                <p>Filter flexible fares or upgrade to FlexiBook protection.</p>
+              </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-white border-t border-trip-border mt-16">
+      <div class="max-w-container mx-auto px-6 py-8 text-sm text-trip-slate">
+        <p>© 2025 Trip.com Replica · Flights vertical</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

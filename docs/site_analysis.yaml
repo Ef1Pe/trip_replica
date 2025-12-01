@@ -1,0 +1,50 @@
+site_analysis:
+  name: "Trip.com"
+  url: "https://www.trip.com"
+  type: "travel/ecommerce"
+
+  color_palette:
+    primary: "#0063ff"
+    secondary: "#142041"
+    accent: "#ff9933"
+    text_primary: "#1d2433"
+    text_secondary: "#5f6b7c"
+    background: "#f4f6fb"
+    surface: "#ffffff"
+
+  typography:
+    heading_font: "'Poppins', 'Helvetica Neue', Arial, sans-serif"
+    heading_sizes:
+      h1: "36px"
+      h2: "28px"
+      h3: "22px"
+    body_font: "'Inter', 'Helvetica Neue', Arial, sans-serif"
+    body_size: "16px"
+    ui_font: "'Inter', 'Helvetica Neue', Arial, sans-serif"
+
+  layout:
+    max_width: "1320px"
+    header_height: "72px"
+    sidebar_width: "300px"
+    grid_columns: 4
+    grid_gap: "24px"
+
+  key_components:
+    - "Sticky top navigation with product switcher"
+    - "Hero banner with fare search module"
+    - "Coupon carousel for new users"
+    - "Destination inspiration chips"
+    - "Recommendation card grids with badges/ratings"
+    - "Mobile app promotion module"
+    - "Dense footer with partner logos"
+
+  injection_targets:
+    - name: "hero_deals"
+      selector: "[data-inject='hero-deals']"
+      description: "Horizontal list of top limited-time banners"
+    - name: "destinations"
+      selector: "[data-inject='destination-grid']"
+      description: "Primary grid showing curated destinations"
+    - name: "recommendations"
+      selector: "[data-inject='recommendation-grid']"
+      description: "Repeating cards for hotels/attractions"

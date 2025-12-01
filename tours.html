@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trip.com Replica · Tours</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { trip: { blue: '#0063ff', slate: '#5f6b7c', border: '#dde3ef' } },
+          fontFamily: { inter: ['Inter', 'sans-serif'], poppins: ['Poppins', 'sans-serif'] },
+          maxWidth: { container: '1280px' }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-[#f5f7fb] text-[#1d2433] font-inter">
+  <div class="min-h-screen">
+    <header class="bg-white shadow-sm border-b border-trip-border">
+      <div class="max-w-container mx-auto px-6">
+        <div class="flex items-center justify-between h-16 gap-4">
+          <div class="flex items-center gap-3">
+            <a href="index.html" class="flex items-center gap-2 text-trip-blue font-semibold text-xl">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Trip.com_logo.svg" alt="Trip.com" class="h-6">
+              <span>Trip.com</span>
+            </a>
+            <div class="hidden lg:flex items-center text-sm text-trip-slate divide-x divide-trip-border">
+              <a class="px-3" href="hotels.html">Hotels</a>
+              <a class="px-3" href="flights.html">Flights</a>
+              <a class="px-3" href="trains.html">Trains</a>
+              <a class="px-3" href="cars.html">Cars</a>
+              <a class="px-3 font-semibold text-trip-blue" aria-current="page" href="tours.html">Tours</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 text-sm">
+            <a class="px-4 py-2 rounded-full bg-trip-blue text-white font-medium" href="#">Sign in / Register</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-container mx-auto px-6 py-10 space-y-12">
+      <section class="bg-white rounded-3xl p-8 shadow-xl border border-trip-border">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div class="space-y-4">
+            <span class="px-4 py-1 rounded-full bg-blue-50 text-trip-blue text-sm font-semibold">Attractions & Tours</span>
+            <h1 class="text-4xl font-poppins font-semibold">Experiences curated by locals worldwide</h1>
+            <p class="text-trip-slate text-lg">Skip-the-line access, private guides, day tours, and curated adventures.</p>
+            <div class="grid gap-4" data-inject="tour-search">
+              <input class="search-input" placeholder="Where to?" />
+              <input class="search-input" type="date" />
+              <input class="search-input" value="2 adults" />
+              <button class="search-button">Find experiences</button>
+            </div>
+          </div>
+          <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80" alt="Tours" class="rounded-2xl shadow-2xl">
+        </div>
+      </section>
+
+      <section class="space-y-6">
+        <div class="flex items-center justify-between">
+          <h2 class="section-title">Featured collections</h2>
+          <a class="text-trip-blue font-semibold" href="#">See all</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6" data-inject="tour-grid">
+          <article class="recommend-card">
+            <div class="badge">Top Pick</div>
+            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=900&q=80" alt="Paris">
+            <div class="card-body">
+              <p class="eyebrow">Paris Museum Pass</p>
+              <p class="caption">Louvre, Orsay & more · From $78</p>
+            </div>
+          </article>
+          <article class="recommend-card">
+            <div class="badge">New</div>
+            <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80" alt="Peru">
+            <div class="card-body">
+              <p class="eyebrow">Machu Picchu Sunrise</p>
+              <p class="caption">Small group · From $249</p>
+            </div>
+          </article>
+          <article class="recommend-card">
+            <div class="badge">Family</div>
+            <img src="https://images.unsplash.com/photo-1518306727298-4c17e1bf6946?auto=format&fit=crop&w=900&q=80" alt="Theme park">
+            <div class="card-body">
+              <p class="eyebrow">Universal Studios VIP</p>
+              <p class="caption">Express access · From $139</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="section-title">Why travelers love Trip.com experiences</h2>
+        <div class="grid md:grid-cols-3 gap-6 text-sm text-trip-slate">
+          <div class="p-6 bg-white rounded-2xl border border-trip-border shadow-sm">
+            <h3 class="font-semibold text-lg text-[#1d2433] mb-2">Instant confirmation</h3>
+            <p>Most tickets arrive in seconds, ready for app wallet or email.</p>
+          </div>
+          <div class="p-6 bg-white rounded-2xl border border-trip-border shadow-sm">
+            <h3 class="font-semibold text-lg text-[#1d2433] mb-2">Real reviews</h3>
+            <p>10M+ guest photos & feedback across 60,000 experiences.</p>
+          </div>
+          <div class="p-6 bg-white rounded-2xl border border-trip-border shadow-sm">
+            <h3 class="font-semibold text-lg text-[#1d2433] mb-2">Flexible options</h3>
+            <p>Reschedule or cancel free on select adventures up to 24h before.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-white border-t border-trip-border mt-16">
+      <div class="max-w-container mx-auto px-6 py-8 text-sm text-trip-slate">
+        <p>© 2025 Trip.com Replica · Tours vertical</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

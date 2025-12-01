@@ -1,0 +1,34 @@
+{
+  "heroDeals": [
+    {
+      "tag": "Extra 8%",
+      "title": "Cyber Monday hotel flash sale",
+      "cta": "View deals"
+    },
+    {
+      "tag": "Up to $50",
+      "title": "Flight coupons for premium users",
+      "cta": "Claim now"
+    }
+  ],
+  "destinations": [
+    {
+      "title": "Orlando",
+      "subtitle": "Theme parks & sunshine",
+      "image": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80"
+    },
+    {
+      "title": "Paris",
+      "subtitle": "Art, fashion & romance",
+      "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80"
+    }
+  ],
+  "recommendations": [
+    {
+      "badge": "Trip Best",
+      "title": "Tokyo Disney Resort",
+      "meta": "4.9 ★ 210K reviews",
+      "image": "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=900&q=80"
+    }
+  ]
+}
