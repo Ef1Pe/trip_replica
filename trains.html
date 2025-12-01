@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trip.com Replica · Trains</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { trip: { blue: '#0063ff', slate: '#5f6b7c', border: '#dde3ef' } },
+          fontFamily: { inter: ['Inter', 'sans-serif'], poppins: ['Poppins', 'sans-serif'] },
+          maxWidth: { container: '1280px' }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-[#f5f7fb] text-[#1d2433] font-inter">
+  <div class="min-h-screen">
+    <header class="bg-white shadow-sm border-b border-trip-border">
+      <div class="max-w-container mx-auto px-6">
+        <div class="flex items-center justify-between h-16 gap-4">
+          <div class="flex items-center gap-3">
+            <a href="index.html" class="flex items-center gap-2 text-trip-blue font-semibold text-xl">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Trip.com_logo.svg" alt="Trip.com" class="h-6">
+              <span>Trip.com</span>
+            </a>
+            <div class="hidden lg:flex items-center text-sm text-trip-slate divide-x divide-trip-border">
+              <a class="px-3" href="hotels.html">Hotels</a>
+              <a class="px-3" href="flights.html">Flights</a>
+              <a class="px-3 font-semibold text-trip-blue" aria-current="page" href="trains.html">Trains</a>
+              <a class="px-3" href="cars.html">Cars</a>
+              <a class="px-3" href="tours.html">Tours</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 text-sm">
+            <a class="px-4 py-2 rounded-full bg-trip-blue text-white font-medium" href="#">Sign in / Register</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-container mx-auto px-6 py-10 space-y-12">
+      <section class="bg-white rounded-3xl p-8 shadow-xl border border-trip-border">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div class="space-y-4">
+            <span class="px-4 py-1 rounded-full bg-blue-50 text-trip-blue text-sm font-semibold">Rail & Intercity</span>
+            <h1 class="text-4xl font-poppins font-semibold">Book high-speed trains in minutes</h1>
+            <p class="text-trip-slate text-lg">Instant confirmation for China Railway, JR, Eurostar, and more.</p>
+            <div class="grid gap-4" data-inject="train-search">
+              <div class="grid md:grid-cols-2 gap-3">
+                <input class="search-input" placeholder="From" />
+                <input class="search-input" placeholder="To" />
+              </div>
+              <div class="grid md:grid-cols-2 gap-3">
+                <input class="search-input" type="date" />
+                <input class="search-input" value="2nd class · 1 adult" />
+              </div>
+              <button class="search-button">Search trains</button>
+            </div>
+          </div>
+          <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=80" alt="Trains" class="rounded-2xl shadow-2xl">
+        </div>
+      </section>
+
+      <section class="space-y-6">
+        <div class="flex items-center justify-between">
+          <h2 class="section-title">Popular rail corridors</h2>
+          <a class="text-trip-blue font-semibold" href="#">Timetable</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6" data-inject="train-grid">
+          <article class="transport-card">
+            <div class="text-xs text-trip-slate">Shanghai ➜ Beijing</div>
+            <h3>4h 28m · G-train</h3>
+            <p>From $93</p>
+          </article>
+          <article class="transport-card">
+            <div class="text-xs text-trip-slate">Paris ➜ London</div>
+            <h3>2h 15m · Eurostar</h3>
+            <p>From $68</p>
+          </article>
+          <article class="transport-card">
+            <div class="text-xs text-trip-slate">Tokyo ➜ Osaka</div>
+            <h3>2h 30m · Shinkansen</h3>
+            <p>From $119</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="section-title">Travel tips</h2>
+        <div class="grid md:grid-cols-3 gap-6 text-sm text-trip-slate">
+          <article class="destination-card">
+            <img src="https://images.unsplash.com/photo-1474134583941-3827c02785b4?auto=format&fit=crop&w=900&q=80" alt="Mobile tickets">
+            <div>
+              <h3>Mobile QR boarding</h3>
+              <p>Skip kiosks—add tickets to Trip.com app wallet.</p>
+            </div>
+          </article>
+          <article class="destination-card">
+            <img src="https://images.unsplash.com/photo-1453743327117-664e2bf4e951?auto=format&fit=crop&w=900&q=80" alt="Seat upgrades">
+            <div>
+              <h3>Seat upgrades</h3>
+              <p>Bid for business class on select railways.</p>
+            </div>
+          </article>
+          <article class="destination-card">
+            <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80" alt="Insurance">
+            <div>
+              <h3>Delay protection</h3>
+              <p>Trip Protection Plus pays out when trains run late.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-white border-t border-trip-border mt-16">
+      <div class="max-w-container mx-auto px-6 py-8 text-sm text-trip-slate">
+        <p>© 2025 Trip.com Replica · Trains vertical</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

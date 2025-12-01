@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trip.com Replica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            trip: {
+              blue: '#0063ff',
+              dark: '#102452',
+              sky: '#e6f0ff',
+              slate: '#5f6b7c',
+              border: '#dde3ef',
+              card: '#f7f9fd'
+            }
+          },
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+            poppins: ['Poppins', 'sans-serif']
+          },
+          maxWidth: {
+            container: '1320px'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-[#f5f7fb] text-[#1d2433] font-inter">
+  <div class="min-h-screen">
+    <header class="bg-white shadow-sm border-b border-trip-border">
+      <div class="max-w-container mx-auto px-6">
+        <div class="flex items-center justify-between h-16 gap-4">
+          <div class="flex items-center gap-3">
+            <a href="index.html" class="flex items-center gap-2 text-trip-blue font-semibold text-xl">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Trip.com_logo.svg" alt="Trip.com" class="h-6">
+              <span>Trip.com</span>
+            </a>
+            <div class="hidden lg:flex items-center text-sm text-trip-slate divide-x divide-trip-border">
+              <button class="px-3 font-semibold text-trip-blue">Hotels</button>
+              <button class="px-3">Flights</button>
+              <button class="px-3">Trains</button>
+              <button class="px-3">Cars</button>
+              <button class="px-3">Attractions</button>
+              <button class="px-3">Bundle & Save</button>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 text-sm">
+            <div class="hidden md:flex items-center gap-2 text-trip-slate">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.008v.008H3.75V6.75zm0 5.25h.008v.008H3.75V12zm0 5.25h.008v.008H3.75V17.25z" /></svg>
+              <span>List Your Property</span>
+            </div>
+            <button class="flex items-center gap-2 text-trip-slate">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.25h13.5v13.5H5.25z" /></svg>
+              USD
+            </button>
+            <button class="flex items-center gap-2 text-trip-slate">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m9-9H3" /></svg>
+              Support
+            </button>
+            <a class="px-4 py-2 rounded-full bg-trip-blue text-white font-medium" href="#">Sign in / Register</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-container mx-auto px-6 py-10 space-y-10">
+      <section class="grid grid-cols-1 xl:grid-cols-[220px_minmax(0,1fr)] gap-6">
+        <aside class="hidden xl:flex flex-col gap-1 bg-white rounded-2xl p-4 shadow-sm border border-trip-border">
+          <h2 class="text-sm font-semibold text-trip-slate uppercase mb-1">Explore</h2>
+          <nav class="space-y-1 text-sm text-trip-slate">
+            <a class="nav-pill" href="#">Hotels & Homes</a>
+            <a class="nav-pill" href="#">Flights</a>
+            <a class="nav-pill" href="#">Trains</a>
+            <a class="nav-pill" href="#">Cars</a>
+            <a class="nav-pill" href="#">Attractions & Tours</a>
+            <a class="nav-pill" href="#">Trip Planner</a>
+            <a class="nav-pill" href="#">Travel Inspiration</a>
+            <a class="nav-pill" href="#">TripCoins Rewards</a>
+            <a class="nav-pill" href="#">Apps</a>
+          </nav>
+        </aside>
+        <div class="space-y-6">
+          <div class="relative rounded-3xl overflow-hidden shadow-xl bg-[#071936] text-white">
+            <div class="absolute inset-0 bg-gradient-to-r from-[#08132c] to-[#0a3b8f] opacity-70"></div>
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" alt="Hero" class="absolute inset-0 w-full h-full object-cover mix-blend-luminosity">
+            <div class="relative p-8">
+              <div class="flex flex-wrap items-center gap-4 text-xs uppercase tracking-wide text-trip-sky mb-6">
+                <span class="px-3 py-1 rounded-full bg-white/10 border border-white/20">Cyber Monday</span>
+                <span>International Flights from $49</span>
+                <span>4-star hotels from $49/night</span>
+              </div>
+              <div class="flex flex-col gap-1 mb-8">
+                <span class="text-sm text-trip-sky">Trip.com exclusive</span>
+                <h1 class="text-4xl font-poppins font-semibold">International flights from $49</h1>
+                <p class="text-trip-sky text-base">Cyber Monday Mega Sale · Ends in 02:15:48</p>
+              </div>
+              <div class="bg-white text-[#1d2433] rounded-2xl shadow-2xl p-5 space-y-4">
+                <div class="flex flex-wrap gap-2 text-sm font-medium text-trip-slate" role="tablist">
+                  <button class="product-tab active" data-product-tab="hotels">Hotels & Homes</button>
+                  <button class="product-tab" data-product-tab="flights">Flights</button>
+                  <button class="product-tab" data-product-tab="trains">Trains</button>
+                  <button class="product-tab" data-product-tab="cars">Cars</button>
+                  <button class="product-tab" data-product-tab="attractions">Attractions & Tours</button>
+                  <button class="product-tab" data-product-tab="bundle">Flight + Hotel</button>
+                </div>
+                <div class="grid md:grid-cols-[2fr_2fr_1.2fr_1.2fr] gap-4 text-sm" data-product-panel="hotels">
+                  <div>
+                    <label class="search-label">Destination</label>
+                    <input class="search-input" placeholder="City, airport, landmark" />
+                  </div>
+                  <div class="grid grid-cols-2 gap-3">
+                    <div>
+                      <label class="search-label">Check-in</label>
+                      <input class="search-input" type="date" />
+                    </div>
+                    <div>
+                      <label class="search-label">Check-out</label>
+                      <input class="search-input" type="date" />
+                    </div>
+                  </div>
+                  <div>
+                    <label class="search-label">Guests & rooms</label>
+                    <input class="search-input" value="1 room, 2 adults" />
+                  </div>
+                  <div class="flex items-end">
+                    <button class="search-button">Search</button>
+                  </div>
+                </div>
+                <div class="grid md:grid-cols-[2fr_2fr_1.2fr_1.2fr] gap-4 text-sm hidden" data-product-panel="flights">
+                  <div>
+                    <label class="search-label">From</label>
+                    <input class="search-input" placeholder="Departure city" />
+                  </div>
+                  <div>
+                    <label class="search-label">To</label>
+                    <input class="search-input" placeholder="Destination city" />
+                  </div>
+                  <div>
+                    <label class="search-label">Dates</label>
+                    <input class="search-input" type="date" />
+                  </div>
+                  <div class="flex items-end">
+                    <button class="search-button">Search</button>
+                  </div>
+                </div>
+                <div class="grid md:grid-cols-[2fr_2fr_1.2fr_1.2fr] gap-4 text-sm hidden" data-product-panel="trains">
+                  <div>
+                    <label class="search-label">From</label>
+                    <input class="search-input" placeholder="Origin station" />
+                  </div>
+                  <div>
+                    <label class="search-label">To</label>
+                    <input class="search-input" placeholder="Destination station" />
+                  </div>
+                  <div>
+                    <label class="search-label">Date</label>
+                    <input class="search-input" type="date" />
+                  </div>
+                  <div class="flex items-end">
+                    <button class="search-button">Search</button>
+                  </div>
+                </div>
+                <div class="grid md:grid-cols-[2fr_2fr_1.2fr_1.2fr] gap-4 text-sm hidden" data-product-panel="cars">
+                  <div>
+                    <label class="search-label">Pick-up</label>
+                    <input class="search-input" placeholder="City or airport" />
+                  </div>
+                  <div>
+                    <label class="search-label">Drop-off</label>
+                    <input class="search-input" placeholder="Drop-off location" />
+                  </div>
+                  <div>
+                    <label class="search-label">Pick-up date</label>
+                    <input class="search-input" type="date" />
+                  </div>
+                  <div>
+                    <label class="search-label">Drop-off date</label>
+                    <input class="search-input" type="date" />
+                  </div>
+                </div>
+                <div class="grid md:grid-cols-[2fr_2fr_1.2fr_1.2fr] gap-4 text-sm hidden" data-product-panel="attractions">
+                  <div>
+                    <label class="search-label">Destination</label>
+                    <input class="search-input" placeholder="City or landmark" />
+                  </div>
+                  <div>
+                    <label class="search-label">Date</label>
+                    <input class="search-input" type="date" />
+                  </div>
+                  <div>
+                    <label class="search-label">Guests</label>
+                    <input class="search-input" value="2 adults" />
+                  </div>
+                  <div class="flex items-end">
+                    <button class="search-button">Search</button>
+                  </div>
+                </div>
+                <div class="grid md:grid-cols-[2fr_2fr_1.2fr_1.2fr] gap-4 text-sm hidden" data-product-panel="bundle">
+                  <div>
+                    <label class="search-label">From</label>
+                    <input class="search-input" placeholder="Departure city" />
+                  </div>
+                  <div>
+                    <label class="search-label">To</label>
+                    <input class="search-input" placeholder="Destination city" />
+                  </div>
+                  <div>
+                    <label class="search-label">Check-in</label>
+                    <input class="search-input" type="date" />
+                  </div>
+                  <div class="flex items-end">
+                    <button class="search-button">Search bundle</button>
+                  </div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs text-trip-slate">
+                  <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-green-500" viewBox="0 0 20 20" fill="currentColor"><path d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z" /></svg>
+                    <span>Our customers say Excellent</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <img src="https://cdn.trustpilot.net/brand-assets/4.5b9752a.svg" class="h-4" alt="Trustpilot">
+                    <span>4.6 out of 5 based on 140,019 reviews</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="section-title">New user exclusive</h2>
+          <a class="text-trip-blue text-sm font-semibold" href="#">More</a>
+        </div>
+        <div class="relative">
+          <div class="coupon-track" data-scroll-track data-inject="hero-deals">
+            <article class="coupon-card">
+              <div class="text-xs uppercase text-trip-blue font-semibold">New user gift</div>
+              <h3 class="text-xl font-semibold">New users get more discounts on travel</h3>
+              <button class="ghost-btn">Sign in & claim</button>
+            </article>
+            <article class="coupon-card">
+              <div class="tag">5% off</div>
+              <h3 class="text-lg font-semibold">EU trains</h3>
+              <button class="ghost-btn">Claim all</button>
+            </article>
+            <article class="coupon-card">
+              <div class="tag">5% off</div>
+              <h3 class="text-lg font-semibold">Attractions & tours</h3>
+              <button class="ghost-btn">Claim all</button>
+            </article>
+            <article class="coupon-card">
+              <div class="tag">10% off</div>
+              <h3 class="text-lg font-semibold">Airport transfers</h3>
+              <button class="ghost-btn">Claim all</button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="space-y-4">
+        <div class="flex items-center justify-between">
+          <h2 class="section-title">Get inspired for your next trip</h2>
+          <a class="text-trip-blue text-sm font-semibold" href="#">More</a>
+        </div>
+        <div class="flex flex-wrap gap-3 text-sm">
+          <button class="chip active">Anywhere</button>
+          <button class="chip">New York</button>
+          <button class="chip">Medellín</button>
+          <button class="chip">Kuala Lumpur</button>
+          <button class="chip">Orlando</button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5" data-inject="destination-grid">
+          <article class="destination-card">
+            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80" alt="Anywhere">
+            <div>
+              <h3>Anywhere</h3>
+              <p>See personalized inspiration for everywhere</p>
+            </div>
+          </article>
+          <article class="destination-card">
+            <img src="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?auto=format&fit=crop&w=800&q=80" alt="New York">
+            <div>
+              <h3>New York</h3>
+              <p>City lights, theater, dining</p>
+            </div>
+          </article>
+          <article class="destination-card">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" alt="Medellin">
+            <div>
+              <h3>Medellín</h3>
+              <p>Spring weather all year long</p>
+            </div>
+          </article>
+          <article class="destination-card">
+            <img src="https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=800&q=80" alt="Kuala Lumpur">
+            <div>
+              <h3>Kuala Lumpur</h3>
+              <p>Skyline views and hawker eats</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="space-y-10">
+        <div class="flex items-center justify-between">
+          <h2 class="section-title">Places you may like</h2>
+          <a class="text-trip-blue text-sm font-semibold" href="#">More</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6" data-inject="recommendation-grid">
+          <article class="recommend-card">
+            <div class="badge">Trip Best</div>
+            <img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format&fit=crop&w=900&q=80" alt="Museum">
+            <div class="card-body">
+              <p class="eyebrow">Emperor Qinshihuang's Mausoleum Site Museum</p>
+              <p class="caption">4.9 ★ 12.3K reviews</p>
+            </div>
+          </article>
+          <article class="recommend-card">
+            <div class="badge">Trip Best</div>
+            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=80" alt="Universal">
+            <div class="card-body">
+              <p class="eyebrow">Universal Beijing Resort</p>
+              <p class="caption">4.8 ★ 47.1K reviews</p>
+            </div>
+          </article>
+          <article class="recommend-card">
+            <div class="badge">Trip Best</div>
+            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=900&q=80" alt="Musee d'Orsay">
+            <div class="card-body">
+              <p class="eyebrow">Musée d'Orsay</p>
+              <p class="caption">4.8 ★ 53.8K reviews</p>
+            </div>
+          </article>
+          <article class="recommend-card">
+            <div class="badge">Trip Best</div>
+            <img src="https://images.unsplash.com/photo-1518306727298-4c17e1bf6946?auto=format&fit=crop&w=900&q=80" alt="Japan">
+            <div class="card-body">
+              <p class="eyebrow">Universal Studios Japan</p>
+              <p class="caption">4.7 ★ 123.5K reviews</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="space-y-6">
+        <div class="flex items-center justify-between">
+          <h2 class="section-title">Magical trip moments that last</h2>
+          <a class="text-trip-blue text-sm font-semibold" href="#">More</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+          <article class="story-card">
+            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=80" alt="Maldives">
+            <div>
+              <h3>Maldives Grand Opening Next Year</h3>
+              <p>Up to 15% off stays</p>
+            </div>
+          </article>
+          <article class="story-card">
+            <img src="https://images.unsplash.com/photo-1473951574080-01fe45ec8643?auto=format&fit=crop&w=800&q=80" alt="Moscow">
+            <div>
+              <h3>Breaking news: Russia's storybook domes</h3>
+              <p>Implement new visa-free routes</p>
+            </div>
+          </article>
+          <article class="story-card">
+            <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80" alt="Montenegro">
+            <div>
+              <h3>Montenegro on a Budget</h3>
+              <p>5 nights · $899</p>
+            </div>
+          </article>
+          <article class="story-card">
+            <img src="https://images.unsplash.com/photo-1496413557169-850cf492c38a?auto=format&fit=crop&w=800&q=80" alt="Bali">
+            <div>
+              <h3>New Maldives Island Opening</h3>
+              <p>Slide & pool for families</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="space-y-6">
+        <div class="flex items-center justify-between">
+          <h2 class="section-title">Stay cozy at our handpicked hotels</h2>
+          <a class="text-trip-blue text-sm font-semibold" href="#">More</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+          <article class="hotel-card">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Hotel">
+            <div class="card-body">
+              <div class="flex items-center justify-between text-xs text-trip-slate mb-1">
+                <span>Singapore</span>
+                <span>4.8 ★ 921 reviews</span>
+              </div>
+              <h3>The Fullerton Bay Hotel</h3>
+              <p class="text-sm">From $513</p>
+            </div>
+          </article>
+          <article class="hotel-card">
+            <img src="https://images.unsplash.com/photo-1501117716987-c8e1ecb210cc?auto=format&fit=crop&w=800&q=80" alt="Edition">
+            <div class="card-body">
+              <div class="flex items-center justify-between text-xs text-trip-slate mb-1">
+                <span>Tokyo</span>
+                <span>4.7 ★ 1.3K reviews</span>
+              </div>
+              <h3>The Sanya EDITION</h3>
+              <p class="text-sm">From $360</p>
+            </div>
+          </article>
+          <article class="hotel-card">
+            <img src="https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?auto=format&fit=crop&w=800&q=80" alt="Cabo">
+            <div class="card-body">
+              <div class="flex items-center justify-between text-xs text-trip-slate mb-1">
+                <span>Los Cabos</span>
+                <span>4.9 ★ 3.4K reviews</span>
+              </div>
+              <h3>Waldorf Astoria Los Cabos</h3>
+              <p class="text-sm">From $1,320</p>
+            </div>
+          </article>
+          <article class="hotel-card">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Bangkok">
+            <div class="card-body">
+              <div class="flex items-center justify-between text-xs text-trip-slate mb-1">
+                <span>Bangkok</span>
+                <span>4.7 ★ 987 reviews</span>
+              </div>
+              <h3>The Siam</h3>
+              <p class="text-sm">From $587</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="space-y-6">
+        <div class="flex items-center justify-between">
+          <h2 class="section-title">Multiple ways to roam around</h2>
+          <a class="text-trip-blue text-sm font-semibold" href="#">More</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+          <article class="transport-card">
+            <div class="text-xs text-trip-slate">Bali ➜ Hong Kong</div>
+            <h3>Dec 2 - Dec 6</h3>
+            <p>From $218.8</p>
+          </article>
+          <article class="transport-card">
+            <div class="text-xs text-trip-slate">Luxembourg ➜ Rome</div>
+            <h3>Dec 3 - Dec 6</h3>
+            <p>From $322.9</p>
+          </article>
+          <article class="transport-card">
+            <div class="text-xs text-trip-slate">Bali ➜ Phuket</div>
+            <h3>Dec 5 - Dec 8</h3>
+            <p>From $213.2</p>
+          </article>
+          <article class="transport-card">
+            <div class="text-xs text-trip-slate">Frankfurt ➜ Cairo</div>
+            <h3>Dec 6 - Dec 10</h3>
+            <p>From $469.2</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="app-cta">
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+          <div class="space-y-6">
+            <div>
+              <span class="text-xs uppercase tracking-wide text-trip-slate">App-only deals · Easy trip planning</span>
+              <h2 class="text-3xl font-poppins font-semibold mt-3">Your all-in-one travel app</h2>
+            </div>
+            <div class="grid grid-cols-3 gap-4 text-center">
+              <div>
+                <h3 class="text-2xl font-semibold">1.8M+</h3>
+                <p class="text-sm text-trip-slate">Daily users</p>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold">150K+</h3>
+                <p class="text-sm text-trip-slate">Daily downloads</p>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold">4.7</h3>
+                <p class="text-sm text-trip-slate">App rating</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://www.trip.com/app" alt="QR" class="w-28 h-28 rounded-lg bg-white p-2">
+              <div class="flex flex-col gap-3">
+                <a class="store-btn" href="#">Download on App Store</a>
+                <a class="store-btn" href="#">Get it on Google Play</a>
+              </div>
+            </div>
+          </div>
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" alt="App" class="rounded-3xl shadow-2xl border border-white/30">
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-white border-t border-trip-border mt-16">
+      <div class="max-w-container mx-auto px-6 py-12 space-y-10">
+        <div class="grid md:grid-cols-3 gap-10">
+          <div>
+            <h3 class="footer-heading">Trip.com Recommendations</h3>
+            <div class="grid grid-cols-2 gap-3 text-sm text-trip-slate">
+              <a href="#">Best Hotels in Shanghai</a>
+              <a href="#">Best Hotels in Hong Kong</a>
+              <a href="#">Best Hotels in Bangkok</a>
+              <a href="#">Best Hotels in Osaka</a>
+              <a href="#">Best Hotels in Singapore</a>
+              <a href="#">Best Hotels in Kuala Lumpur</a>
+            </div>
+          </div>
+          <div>
+            <h3 class="footer-heading">About</h3>
+            <ul class="footer-links">
+              <li><a href="#">About Trip.com</a></li>
+              <li><a href="#">News</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Statement</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-heading">Other Services</h3>
+            <ul class="footer-links">
+              <li><a href="#">Investor Relations</a></li>
+              <li><a href="#">Trip.com Rewards</a></li>
+              <li><a href="#">List Your Property</a></li>
+              <li><a href="#">Affiliate Program</a></li>
+              <li><a href="#">Become a Supplier</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-6 text-sm text-trip-slate">
+          <div class="flex items-center gap-3">
+            <span>Payment methods</span>
+            <div class="flex items-center gap-2">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Visa_2021.svg" alt="Visa" class="h-5">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard" class="h-5">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Google_Pay_logo.svg" alt="Google Pay" class="h-5">
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <span>Our partners</span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Google_Travel_%282019%29.svg" class="h-5" alt="Google">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Tripadvisor_logo.svg" class="h-5" alt="Tripadvisor">
+          </div>
+        </div>
+        <div class="text-xs text-trip-slate border-t border-trip-border pt-6">
+          <p>© 2025 Trip.com Travel Singapore Pte. Ltd. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
